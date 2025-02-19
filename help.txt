@@ -1,0 +1,19 @@
+python -m venv fastapienv
+
+python -m pip install --upgrade pip
+
+.\fastapienv\Scripts\activate
+
+pip install "fastapi[standard]"
+
+pip install "uvicorn[standard]"
+
+deactivate
+
+uvicorn books:app --reload
+
+fastapi run books.py
+
+pip freeze > requirements.txt
+
+pip install -r requirements.txt
